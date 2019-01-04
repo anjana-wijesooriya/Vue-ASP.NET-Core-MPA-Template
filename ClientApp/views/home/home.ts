@@ -1,8 +1,7 @@
 import Vue from 'vue';
 
-import 'bootstrap/scss/bootstrap.scss'
-import 'themify-icons-scss/scss/themify-icons.scss'
 import '../../styles/index.scss'
+import 'themify-icons-scss/scss/themify-icons.scss'
 
 import store from '../../store/pages/home/homeStore.js'
 

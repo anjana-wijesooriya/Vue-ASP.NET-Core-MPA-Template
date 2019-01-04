@@ -28,181 +28,65 @@
               </div>
             </div>
           </div>
-
           <!-- ### $Sidebar Menu ### -->
           <ul class="sidebar-menu scrollable pos-r">
-            <li class="nav-item mT-30 active">
-              <a class="sidebar-link" href="#">
-                <span class="icon-holder">
-                  <i class="c-blue-500 ti-home"></i>
-                </span>
-                <span class="title">Menu Item</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class='sidebar-link' href="#">
-                <span class="icon-holder">
-                  <i class="c-brown-500 ti-email"></i>
-                </span>
-                <span class="title">Menu Item</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class='sidebar-link' href="#">
-                <span class="icon-holder">
-                  <i class="c-blue-500 ti-share"></i>
-                </span>
-                <span class="title">Menu Item</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class='sidebar-link' href="#">
-                <span class="icon-holder">
-                  <i class="c-deep-orange-500 ti-calendar"></i>
-                </span>
-                <span class="title">Menu Item</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class='sidebar-link' href="#">
-                <span class="icon-holder">
-                  <i class="c-deep-purple-500 ti-comment-alt"></i>
-                </span>
-                <span class="title">Menu Item</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class='sidebar-link' href="#">
-                <span class="icon-holder">
-                  <i class="c-indigo-500 ti-bar-chart"></i>
-                </span>
-                <span class="title">Menu Item</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class='sidebar-link' href="#">
-                <span class="icon-holder">
-                  <i class="c-light-blue-500 ti-pencil"></i>
-                </span>
-                <span class="title">Menu Item</span>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="sidebar-link" href="#">
-                <span class="icon-holder">
-                    <i class="c-pink-500 ti-palette"></i>
-                  </span>
-                <span class="title">UI Elements</span>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="dropdown-toggle" href="javascript:void(0);">
-                <span class="icon-holder">
-                  <i class="c-orange-500 ti-layout-list-thumb"></i>
-                </span>
-                <span class="title">Menu Item</span>
-                <span class="arrow">
-                  <i class="ti-angle-right"></i>
-                </span>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class='sidebar-link' href="#">Sub Menu Item</a>
-                </li>
-                <li>
-                  <a class='sidebar-link' href="#">Sub Menu Item</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="dropdown-toggle" href="javascript:void(0);">
-                <span class="icon-holder">
-                    <i class="c-purple-500 ti-map"></i>
-                  </span>
-                <span class="title">Menu Item</span>
-                <span class="arrow">
-                    <i class="ti-angle-right"></i>
-                  </span>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="#">Sub Menu Item</a>
-                </li>
-                <li>
-                  <a href="#">Sub Menu Item</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="dropdown-toggle" href="javascript:void(0);">
-                <span class="icon-holder">
-                    <i class="c-red-500 ti-files"></i>
-                  </span>
-                <span class="title">Menu Item</span>
-                <span class="arrow">
-                    <i class="ti-angle-right"></i>
-                  </span>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class='sidebar-link' href="#">Sub Menu Item</a>
-                </li>                 
-                <li>
-                  <a class='sidebar-link' href="#">Sub Menu Item</a>
-                </li>
-                <li>
-                  <a class='sidebar-link' href="#">Sub Menu Item</a>
-                </li>
-                <li>
-                  <a class='sidebar-link' href="#">Sub Menu Item</a>
-                </li>
-                <li>
-                  <a class='sidebar-link' href="#">Sub Menu Item</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="dropdown-toggle" href="javascript:void(0);">
-                <span class="icon-holder">
-                  <i class="c-teal-500 ti-view-list-alt"></i>
-                </span>
-                <span class="title">Menu Item</span>
-                <span class="arrow">
-                  <i class="ti-angle-right"></i>
-                </span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="nav-item dropdown">
-                  <a href="javascript:void(0);">
-                    <span>Sub Menu Item</span>
-                  </a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a href="javascript:void(0);">
-                    <span>Sub Menu Item</span>
-                    <span class="arrow">
-                      <i class="ti-angle-right"></i>
-                    </span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a href="javascript:void(0);">Sub Menu Item</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void(0);">Sub Menu Item</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
+            <side-menu-item v-for="(item, index) in menuItems" :key="index" :item="item" :isParent="true"></side-menu-item>
+            
           </ul>
         </div>
       </div>
 </template>
 <script lang="ts">
-import {Vue, Component} from 'vue-property-decorator'
+import {Vue, Component} from 'vue-property-decorator';
 
-@Component({ name: 'sidebar' })
-export default class Sidebar extends Vue {}
+import SideMenuItem from './helpers/SideMenuItem.vue';
+
+import { MenuItem } from '../../models/helpers/menuItem.model';
+
+@Component({ name: 'sidebar', components: { SideMenuItem } })
+export default class Sidebar extends Vue {
+    isOpen: boolean;
+    menuItems: MenuItem[];
+
+    constructor () {
+      super();
+      this.isOpen = false;
+      this.menuItems = this.getMenuItems();
+    }
+
+    getMenuItems(): MenuItem[] {
+      let menulist = [];
+      menulist.push(new MenuItem('Menu Item', 'c-blue-500 ti-home', []));
+      menulist.push(new MenuItem('Menu Item', 'c-brown-500 ti-email', []));
+      menulist.push(new MenuItem('Menu Item', 'c-blue-500 ti-share', [
+        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', []),
+        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', []),
+        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', [])
+      ]));
+      menulist.push(new MenuItem('Menu Item', 'c-deep-orange-500 ti-calendar', [
+        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', []),
+        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', [
+          new MenuItem('Sub Menu Item 1', 'c-light-blue-500 ti-pencil', []),
+          new MenuItem('Sub Menu Item 1', 'c-light-blue-500 ti-pencil', [
+            new MenuItem('Sub Menu Item 2', 'c-light-blue-500 ti-pencil', []),
+            new MenuItem('Sub Menu Item 2', 'c-light-blue-500 ti-pencil', []),
+            new MenuItem('Sub Menu Item 2', 'c-light-blue-500 ti-pencil', [])
+          ]),
+          new MenuItem('Sub Menu Item 1', 'c-light-blue-500 ti-pencil', [])
+        ]),
+        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', [])
+      ]));
+      menulist.push(new MenuItem('Menu Item', 'c-deep-purple-500 ti-comment-alt', []));
+      menulist.push(new MenuItem('Menu Item', 'c-indigo-500 ti-bar-chart', []));
+      menulist.push(new MenuItem('Menu Item', 'c-light-blue-500 ti-pencil', []));
+      menulist.push(new MenuItem('Menu Item', 'c-pink-500 ti-palette', []));
+      menulist.push(new MenuItem('Menu Item', 'c-orange-500 ti-layout-list-thumb', []));
+      menulist.push(new MenuItem('Menu Item', 'c-purple-500 ti-map', []));
+      menulist.push(new MenuItem('Menu Item', 'c-red-500 ti-files', []));
+      menulist.push(new MenuItem('Menu Item', 'c-teal-500 ti-view-list-alt', []));
+
+      return menulist;
+    }
+}
 </script>
 
