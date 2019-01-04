@@ -1,0 +1,29 @@
+@{
+    <!-- var CssPath = "~/dist/css/" + ViewData["ResourcePath"] + ".css";
+    var JsPath = "~/dist/js/" + ViewData["ResourcePath"] + ".js"; -->
+
+    var CssPath = "~/dist/css/Home.css";
+    var JsPath = "~/dist/js/Home.js";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>@ViewData["Title"] - ASP.NET Vue Basic Template</title>
+
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,300italic,400italic' rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href=@CssPath asp-append-version="true" />
+</head>
+<body>
+  <div id="app-root">
+    <div id="app">
+      @RenderBody()
+    </div>
+  </div>
+
+  <script src="@JsPath" asp-append-version="true"></script>
+  @RenderSection("scripts", required: false)
+</body>
+</html>
