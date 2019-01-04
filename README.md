@@ -57,13 +57,6 @@ Browse to [http://localhost:5000](http://localhost:5000)
 
 ----
 
-# Found a Bug? Want to Contribute?
-
-Nothing's ever perfect, but please let me know by creating an issue (make sure there isn't an existing one about it already), and we'll try and work out a fix for it! If you have any good ideas, or want to contribute, feel free to either make an Issue with the Proposal, or just make a PR from your Fork.
-Please note that this project is released with a [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
-
-----
-
 ### Special Thanks
 
 Many thanks go out to Steve Sanderson (@SteveSandersonMS) from Microsoft and his amazing work on [JavaScriptServices](https://blogs.msdn.microsoft.com/webdev/2017/02/14/building-single-page-applications-on-asp-net-core-with-javascriptservices/) and integrating the world of Node with ASP.NET Core.
@@ -73,4 +66,4 @@ Many thanks go out to Steve Sanderson (@SteveSandersonMS) from Microsoft and his
 
 ### Follow me online:
 
-[![Facebook Follow](https://www.facebook.com/darkslayer1992) 
+[![Facebook Follow](https://www.facebook.com/darkslayer1992)]
