@@ -54,21 +54,21 @@ export default class Notification extends Vue {
         let notList: NotificationModel[] = [];
         notList.push(new NotificationModel(
             'post',
-            'dist/assets/images/avatar-2.jpg',
+            '/dist/assets/images/avatar-2.jpg',
             'John Abraham',
             'liked your',
             '2 mins ago'
         ));
         notList.push(new NotificationModel(
             'cover image',
-            'dist/assets/images/avatar-3.jpg',
+            '/dist/assets/images/avatar-3.jpg',
             'Jeremy Rakestraw',
             'commented on your',
             '12 min ago'
         ));
         notList.push(new NotificationModel(
             'video',
-            'dist/assets/images/avatar-4.jpg',
+            '/dist/assets/images/avatar-4.jpg',
             'Monaan Pechi',
             'liked your',
             '22 days ago'

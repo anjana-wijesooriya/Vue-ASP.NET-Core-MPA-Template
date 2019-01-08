@@ -2,7 +2,7 @@
     <!-- var CssPath = "~/dist/css/" + ViewData["ResourcePath"] + ".css";
     var JsPath = "~/dist/js/" + ViewData["ResourcePath"] + ".js"; -->
 
-    var CssPath = "~/dist/css/Home.css";
+    var CssPath = "~/dist/css/Home/Home.css";
     var JsPath = "~/dist/js/Home.js";
 }
 <!DOCTYPE html>
@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <script src="@JsPath" asp-append-version="true"></script>
+  <!-- <script src="@JsPath" asp-append-version="true"></script> -->
   @RenderSection("scripts", required: false)
 </body>
 </html>

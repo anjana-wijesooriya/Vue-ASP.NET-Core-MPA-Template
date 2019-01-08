@@ -22,7 +22,10 @@ module.exports = env => {
   return [
     {
       mode: 'production',
-      entry: { Home: './ClientApp/views/home/home.ts' },
+      entry: {
+        'Home/Home': './ClientApp/views/home/home.ts',
+        'Home/About': './ClientApp/views/home/about.ts'
+      },
       stats: { modules: false },
       context: __dirname,
       resolve: {

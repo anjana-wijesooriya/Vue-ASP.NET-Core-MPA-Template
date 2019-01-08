@@ -1,15 +1,22 @@
 import Vue from 'vue';
+import VueRouter from 'vue-router'
 
 import '../../styles/index.scss'
 import 'themify-icons-scss/scss/themify-icons.scss'
 
 import store from '../../store/pages/home/homeStore.js'
 
-import HomeApp from '../../components/home/Home.vue'
+Vue.use(VueRouter)
 
-Vue.component('core-view', HomeApp)
+// const routes = [
+//     { path: '/', component: require('../../components/home/Home.vue').default }
+//   // { path: '/home/contact', component: require('./components/counter/counter.vue.html') },
+//   // { path: '/fetchdata', component: require('./components/fetchdata/fetchdata.vue.html') }
+// ]
 
 const app = new Vue({
-    el: '#app',
-    store
+  el: '#app-template',
+  // router: new VueRouter({ routes: routes }),
+  store,
+  render: h => h(require('../../app/home/home.app.vue').default)
 })

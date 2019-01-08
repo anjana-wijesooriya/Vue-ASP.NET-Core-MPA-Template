@@ -10,7 +10,7 @@
                   <div class="peers ai-c fxw-nw">
                     <div class="peer">
                       <div class="logo">
-                        <img src="assets/static/images/logo.png" alt="">
+                        <img src="/dist/assets/static/images/logo.png" alt="">
                       </div>
                     </div>
                     <div class="peer peer-greed">
@@ -31,7 +31,6 @@
           <!-- ### $Sidebar Menu ### -->
           <ul class="sidebar-menu scrollable pos-r">
             <side-menu-item v-for="(item, index) in menuItems" :key="index" :item="item" :isParent="true"></side-menu-item>
-            
           </ul>
         </div>
       </div>
@@ -56,34 +55,34 @@ export default class Sidebar extends Vue {
 
     getMenuItems(): MenuItem[] {
       let menulist = [];
-      menulist.push(new MenuItem('Menu Item', 'c-blue-500 ti-home', []));
-      menulist.push(new MenuItem('Menu Item', 'c-brown-500 ti-email', []));
-      menulist.push(new MenuItem('Menu Item', 'c-blue-500 ti-share', [
-        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', []),
-        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', []),
-        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', [])
+      menulist.push(new MenuItem('Home', 'c-blue-500 ti-home', '/', []));
+      menulist.push(new MenuItem('Contact', 'c-brown-500 ti-email', '/home/about', []));
+      menulist.push(new MenuItem('Menu Item', 'c-blue-500 ti-share', '/', [
+        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', '/', []),
+        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', '/', []),
+        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', '/', [])
       ]));
-      menulist.push(new MenuItem('Menu Item', 'c-deep-orange-500 ti-calendar', [
-        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', []),
-        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', [
-          new MenuItem('Sub Menu Item 1', 'c-light-blue-500 ti-pencil', []),
-          new MenuItem('Sub Menu Item 1', 'c-light-blue-500 ti-pencil', [
-            new MenuItem('Sub Menu Item 2', 'c-light-blue-500 ti-pencil', []),
-            new MenuItem('Sub Menu Item 2', 'c-light-blue-500 ti-pencil', []),
-            new MenuItem('Sub Menu Item 2', 'c-light-blue-500 ti-pencil', [])
+      menulist.push(new MenuItem('Menu Item', 'c-deep-orange-500 ti-calendar', '/', [
+        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', '/', []),
+        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', '/', [
+          new MenuItem('Sub Menu Item 1', 'c-light-blue-500 ti-pencil', '/', []),
+          new MenuItem('Sub Menu Item 1', 'c-light-blue-500 ti-pencil', '/', [
+            new MenuItem('Sub Menu Item 2', 'c-light-blue-500 ti-pencil', '/', []),
+            new MenuItem('Sub Menu Item 2', 'c-light-blue-500 ti-pencil', '/', []),
+            new MenuItem('Sub Menu Item 2', 'c-light-blue-500 ti-pencil', '/', [])
           ]),
-          new MenuItem('Sub Menu Item 1', 'c-light-blue-500 ti-pencil', [])
+          new MenuItem('Sub Menu Item 1', 'c-light-blue-500 ti-pencil', '/', [])
         ]),
-        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', [])
+        new MenuItem('Sub Menu Item', 'c-light-blue-500 ti-pencil', '/', [])
       ]));
-      menulist.push(new MenuItem('Menu Item', 'c-deep-purple-500 ti-comment-alt', []));
-      menulist.push(new MenuItem('Menu Item', 'c-indigo-500 ti-bar-chart', []));
-      menulist.push(new MenuItem('Menu Item', 'c-light-blue-500 ti-pencil', []));
-      menulist.push(new MenuItem('Menu Item', 'c-pink-500 ti-palette', []));
-      menulist.push(new MenuItem('Menu Item', 'c-orange-500 ti-layout-list-thumb', []));
-      menulist.push(new MenuItem('Menu Item', 'c-purple-500 ti-map', []));
-      menulist.push(new MenuItem('Menu Item', 'c-red-500 ti-files', []));
-      menulist.push(new MenuItem('Menu Item', 'c-teal-500 ti-view-list-alt', []));
+      menulist.push(new MenuItem('Menu Item', 'c-deep-purple-500 ti-comment-alt', '/', []));
+      menulist.push(new MenuItem('Menu Item', 'c-indigo-500 ti-bar-chart', '/', []));
+      // menulist.push(new MenuItem('Menu Item', 'c-light-blue-500 ti-pencil', []));
+      // menulist.push(new MenuItem('Menu Item', 'c-pink-500 ti-palette', []));
+      // menulist.push(new MenuItem('Menu Item', 'c-orange-500 ti-layout-list-thumb', []));
+      // menulist.push(new MenuItem('Menu Item', 'c-purple-500 ti-map', []));
+      // menulist.push(new MenuItem('Menu Item', 'c-red-500 ti-files', []));
+      // menulist.push(new MenuItem('Menu Item', 'c-teal-500 ti-view-list-alt', []));
 
       return menulist;
     }

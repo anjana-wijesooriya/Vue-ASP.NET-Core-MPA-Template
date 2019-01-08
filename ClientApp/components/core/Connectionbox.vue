@@ -56,19 +56,19 @@ export default class ConnectionBox extends Vue {
         let conList: ConnectionBoxModel[] = [];
         conList.push(new ConnectionBoxModel(
             'John Doe',
-            'dist/assets/images/github.png',
+            '/dist/assets/images/github.png',
             'Want to create your own customized data generator for your app...',
             '5 mins ago'
         ));
         conList.push(new ConnectionBoxModel(
             'Moo Doe',
-            'dist/assets/images/dribbble.png',
+            '/dist/assets/images/dribbble.png',
             'Want to create your own customized data generator for your app...',
             '15 mins ago'
         ));
         conList.push(new ConnectionBoxModel(
             'Lee Doe',
-            'dist/assets/images/dropbox.png',
+            '/dist/assets/images/dropbox.png',
             'Want to create your own customized data generator for your app...',
             '25 mins ago'
         ));

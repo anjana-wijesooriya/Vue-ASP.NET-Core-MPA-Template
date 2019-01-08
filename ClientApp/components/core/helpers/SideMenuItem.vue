@@ -3,7 +3,7 @@
 <li class="nav-item" 
     v-if="isParent && item.children && item.children.length === 0" 
 >
-    <a class="sidebar-link" href="#">
+    <a class="sidebar-link" v-bind:href="item.url">
         <span class="icon-holder">
             <i :class="item.icon"></i>
         </span>
@@ -13,7 +13,7 @@
 
 <li v-else-if="item.children && item.children.length > 0 && isParent" 
     class="nav-item dropdown" :class="[isOpen ? 'open' : '']">
-    <a class="dropdown-toggle" href="javascript:void(0);" @click="isOpen = !isOpen">
+    <a class="dropdown-toggle" href="#" @click="isOpen = !isOpen">
     <span class="icon-holder">
         <i :class="item.icon"></i>
         </span>
@@ -28,11 +28,11 @@
 </li>
 
 <li v-else-if="!isParent && item.children && item.children.length === 0">
-     <a href="#">{{ item.title }}</a>
+     <a v-bind:href="item.url">{{ item.title }}</a>
 </li>
 
 <li v-else class="nav-item dropdown" :class="[isOpen ? 'open' : '']">
-    <a href="javascript:void(0);" @click="isOpen = !isOpen">
+    <a href="#" @click="isOpen = !isOpen">
     <span>{{ item.title }}</span>
     <span class="arrow">
         <i class="ti-angle-right"></i>

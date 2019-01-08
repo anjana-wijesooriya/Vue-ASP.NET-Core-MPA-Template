@@ -19,5 +19,10 @@ namespace Vue_ASP.NET_Core_MPA_Template.Controllers
             ViewData["RequestId"] = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
             return View();
         }
+
+        public IActionResult About()
+        {
+            return View();
+        }
     }
 }

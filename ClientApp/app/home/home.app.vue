@@ -1,22 +1,27 @@
 <template>
-<div class="app" :class="[ openSidebar ? 'is-collapsed' : '' ]">
+<div id="app-template">
+    <div class="app" :class="[ openSidebar ? 'is-collapsed' : '' ]">
     <!-- #Left Sidebar ==================== -->
     <sidebar/>
     <div class="page-container">
         <!-- ### $Topbar ### -->
         <topbar/>
+        <!-- ### $Content ### -->
+        <home-component></home-component>
     </div>
+</div>
 </div>
 </template>
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 
-import Sidebar from '../core/Sidebar.vue'
-import Topbar from '../core/Topbar.vue'
+import Sidebar from '../../components/core/Sidebar.vue'
+import Topbar from '../../components/core/Topbar.vue'
+import HomeComponent from '../../components/home/Home.component.vue'
 
 @Component({
-    name: 'core-view',
-    components: { Sidebar, Topbar },
+    // name: 'core-view',
+    components: { Sidebar, Topbar, HomeComponent },
     computed: {
         openSidebar () {
             return this.$store.state.Sidebar.sidebarOpen
