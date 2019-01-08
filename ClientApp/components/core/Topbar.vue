@@ -12,6 +12,7 @@
             <searchbar :showSearchbox="showSearchbox"></searchbar>
         </ul>
         <ul class="nav-right">
+            <language-switcher></language-switcher>
             <notification></notification>
             <connection-box></connection-box>
             <profile-menu></profile-menu>
@@ -26,10 +27,11 @@ import Searchbar from './helpers/Searchbar.vue'
 import Notification from './Notification.vue'
 import ConnectionBox from './Connectionbox.vue'
 import ProfileMenu from './ProfileMenu.vue'
+import LanguageSwitcher from './LanguageSwitcher.vue'
 
 @Component({
     name: 'topbar',
-    components: { SidebarToggle, Searchbar, Notification, ConnectionBox, ProfileMenu },
+    components: { SidebarToggle, Searchbar, Notification, ConnectionBox, ProfileMenu, LanguageSwitcher },
 })
 export default class Topbar extends Vue {
     showSearchbox: boolean;

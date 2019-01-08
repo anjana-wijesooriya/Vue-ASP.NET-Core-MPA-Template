@@ -5,6 +5,7 @@ import '../../styles/index.scss'
 import 'themify-icons-scss/scss/themify-icons.scss'
 
 import store from '../../store/pages/home/homeStore.js'
+import { i18n } from '../../lang/home/home.lang.js'
 
 Vue.use(VueRouter)
 
@@ -17,6 +18,7 @@ Vue.use(VueRouter)
 const app = new Vue({
   el: '#app-template',
   // router: new VueRouter({ routes: routes }),
+  i18n,
   store,
   render: h => h(require('../../app/home/home.app.vue').default)
 })

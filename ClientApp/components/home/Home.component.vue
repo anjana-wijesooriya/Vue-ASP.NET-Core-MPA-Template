@@ -2,6 +2,7 @@
 <main class="main-content bgc-grey-100">
  <div id='mainContent'>
         <h1>This is Home Component</h1>
+        <h2>{{$t('message.hello')}}</h2>
     </div>
 </main>
 </template>
